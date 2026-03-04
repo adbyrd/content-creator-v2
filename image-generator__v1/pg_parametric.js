@@ -20,7 +20,7 @@ $w.onReady(function () {
   });
 
   // Close dropdown when other main menus are clicked
-  $w('#menuEdit, #menuView, #menuHelp').onClick(() => {
+  $w('#ccEditFile, #ccViewFile, #ccHelpFile').onClick(() => {
     $w('#ccFileMenu').hide();
   });
 
@@ -32,7 +32,7 @@ $w.onReady(function () {
       // additional data can be added here
     };
 
-    const webhookUrl = 'https://your-n8n-url.com/webhook/export-image';
+    const webhookUrl = 'CC_WEBHOK_EXPORT_IMAGE';
 
     fetch(webhookUrl, {
       method: 'post',
