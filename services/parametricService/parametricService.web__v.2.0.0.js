@@ -1,26 +1,43 @@
 /**
- * IMAGE GENERATOR - 'PARAMETRIC'
- * Backend Service
- * version 1.2.0
+ * 'PARAMETRIC' IMAGE GENERATOR v.2 (adbyrd.com/cc)
+ * [ BACKEND SERVICE ] 'EXPORT' & 'STATUS CHECK'
+ * version 2.0.0
  */
 
 import { fetch } from 'wix-fetch';
 import { getSecret } from 'wix-secrets-backend';
+import { webMethod, Permissions } from 'wix-web-module';
 
-/**
- * Sends the export image payload to the n8n webhook.
- * @returns {Promise<Object>} - Result of the webhook call.
- */
-export async function exportImage() {
-  console.log("[cc-v1.0.0] - Backend: exportImage called");
+// 👇 This log MUST appear in Velo Monitoring if the file loads
+console.log('[parametricService] Module loaded – version 1.4.0');
 
+// Helper to safely retrieve secrets
+async function getSecrets() {
   try {
-    const webhookUrl = await getSecret('CC_WEBHOOK_EXPORT_IMAGE');
+    const webhookUrl = await getSecret('CC_EXPORT_IMAGE');
     const clientId = await getSecret('CLIENT_ID');
     const clientSecret = await getSecret('CLIENT_SECRET');
     const projectId = await getSecret('PROJECT_ID');
 
-    console.log("[cc-v1.0.0] - Backend: Secrets retrieved");
+    console.log('[parametricService] Secrets retrieved:', {
+      webhookUrl: webhookUrl ? 'present' : 'missing',
+      clientId: clientId ? 'present' : 'missing',
+      clientSecret: clientSecret ? 'present' : 'missing',
+      projectId: projectId ? 'present' : 'missing'
+    });
+
+    return { webhookUrl, clientId, clientSecret, projectId };
+  } catch (error) {
+    console.error('[parametricService] Secret retrieval failed:', error.message);
+    throw new Error(`Secret retrieval failed: ${error.message}`);
+  }
+}
+
+// Export the main image generation function
+export const exportImage = webMethod(Permissions.Anyone, async () => {
+  console.log('[cc-v1.0.0] - Backend: exportImage called');
+  try {
+    const { webhookUrl, clientId, clientSecret, projectId } = await getSecrets();
 
     const payload = [
       {
@@ -40,7 +57,7 @@ export async function exportImage() {
       }
     ];
 
-    console.log("[cc-v1.0.0] - Backend: Payload prepared", JSON.stringify(payload, null, 2));
+    console.log('[cc-v1.0.0] - Backend: Payload prepared');
 
     const response = await fetch(webhookUrl, {
       method: 'post',
@@ -52,26 +69,22 @@ export async function exportImage() {
 
     if (response.ok) {
       const responseText = await response.text();
-      console.log("[cc-v1.0.0] - Backend: Webhook succeeded", responseText);
+      console.log('[cc-v1.0.0] - Backend: Webhook succeeded');
       return { success: true, status: response.status, body: responseText };
     } else {
       const errorText = await response.text();
-      console.error("[cc-v1.0.0] - Backend: Webhook error", response.status, errorText);
+      console.error('[cc-v1.0.0] - Backend: Webhook error', response.status, errorText);
       throw new Error(`Webhook responded with ${response.status}: ${errorText}`);
     }
   } catch (error) {
-    console.error("[cc-v1.0.0] - Backend: Exception in exportImage", error);
+    console.error('[cc-v1.0.0] - Backend: Exception in exportImage', error);
     throw error;
   }
-}
+});
 
-/**
- * Checks the status of the webhook connection.
- * Retrieves secrets and attempts a lightweight test call.
- * @returns {Promise<Object>} - Status object with configured, error, lastCheck, ready, testPassed.
- */
-export async function checkWebhookStatus() {
-  console.log("[cc-v1.0.0] - Backend: checkWebhookStatus called");
+// Export the status check function
+export const checkWebhookStatus = webMethod(Permissions.Anyone, async () => {
+  console.log('[cc-v1.0.0] - Backend: checkWebhookStatus called');
   const status = {
     configured: false,
     details: null,
@@ -82,13 +95,8 @@ export async function checkWebhookStatus() {
   };
 
   try {
-    // Attempt to retrieve all required secrets
-    const webhookUrl = await getSecret('CC_WEBHOOK_EXPORT_IMAGE');
-    const clientId = await getSecret('CLIENT_ID');
-    const clientSecret = await getSecret('CLIENT_SECRET');
-    const projectId = await getSecret('PROJECT_ID');
+    const { webhookUrl, clientId, clientSecret, projectId } = await getSecrets();
 
-    // If we reach here, secrets are configured
     status.configured = true;
     status.details = {
       webhookUrl: webhookUrl ? 'present' : 'missing',
@@ -97,7 +105,6 @@ export async function checkWebhookStatus() {
       projectId: projectId ? 'present' : 'missing'
     };
 
-    // Lightweight test: send a minimal payload to the webhook
     const testPayload = [{ test: true, action: 'status_check' }];
     const response = await fetch(webhookUrl, {
       method: 'post',
@@ -110,15 +117,13 @@ export async function checkWebhookStatus() {
       status.testPassed = true;
     } else {
       status.error = `Webhook responded with status ${response.status}`;
-      status.ready = false;
-      status.testPassed = false;
+      const errorText = await response.text();
+      status.details = { ...status.details, responseError: errorText.substring(0, 200) };
     }
   } catch (error) {
     status.error = error.message;
-    status.ready = false;
-    status.testPassed = false;
   }
 
-  console.log("[cc-v1.0.0] - Backend: checkWebhookStatus result", status);
+  console.log('[cc-v1.0.0] - Backend: checkWebhookStatus result', status);
   return status;
-}
+});
