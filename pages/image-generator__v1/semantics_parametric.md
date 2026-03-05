@@ -8,9 +8,9 @@ Page #ccParametric
 │             └── Stack(Box) #ccHeaderMainMenu
 │                   └── Basic Shape(Vector Image) #ccLogo
 │                   └── Button #ccMenuFile
-│                   └── Button #ccEditFile
-│                   └── Button #ccViewFile
-│                   └── Button #ccHelpFile
+│                   └── Button #ccMenuEdit
+│                   └── Button #ccMenuView
+│                   └── Button #ccMenuHelp
 │   	└── Container(Box) #ccFileMenu
 │             └── Stack(Box) #ccFileOptions
 │                   └── Button #ccFileNewImage
