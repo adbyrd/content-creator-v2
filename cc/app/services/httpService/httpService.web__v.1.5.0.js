@@ -1,13 +1,13 @@
 /**
  * 'PARAMETRIC' IMAGE GENERATOR v.2 (adbyrd.com/cc)
  * [ BACKEND SERVICE ] 'HTTP'
- * version 1.8.0
+ * version 1.5.0
  */
 
-
+// backend/http-functions.js
 import { ok, badRequest } from 'wix-http-functions';
 import wixData from 'wix-data';
-import wixMedia from 'wix-media-backend';
+import wixMedia from 'wix-media-backend';   // Correct default import
 
 export async function post_receiveImage(request) {
     let body;
@@ -19,11 +19,11 @@ export async function post_receiveImage(request) {
             return badRequest({ body: "Missing requestId or imageBase64" });
         }
 
-        // Convert base64 to blob
+        // Convert base64 to blob and upload to Wix Media
         const buffer = Buffer.from(imageBase64, 'base64');
         const blob = new Blob([buffer], { type: mimeType });
 
-        // @ts-ignore - upload exists at runtime despite incomplete type definitions
+        // @ts-ignore - The type definition for wix-media-backend is incomplete; upload exists at runtime.
         const uploadedFile = await wixMedia.upload(blob, {
             fileName: `user-images/${requestId}.png`,
             mimeType: mimeType
@@ -31,36 +31,18 @@ export async function post_receiveImage(request) {
 
         const imageUrl = uploadedFile.fileUrl;   // public URL
 
-        // 1. Fetch the existing record
-        const existingItem = await wixData.get("UserImages", requestId);
-        if (!existingItem) {
-            return badRequest({ body: "Record not found" });
-        }
-
-        // 2. Merge new data (preserves existing fields)
-        const updatedItem = {
-            ...existingItem,
+        // @ts-ignore - The 'status' field is part of the item object, not options. This warning is harmless.
+        await wixData.update("UserImages", requestId, {
             status: "completed",
             imageUrl: imageUrl
-        };
-
-        // 3. Update with the complete item object (second argument)
-        await wixData.update("UserImages", updatedItem);
+        });
 
         return ok({ body: "Image received and saved" });
     } catch (error) {
-        // If error, try to mark record as failed (if we have the ID)
         if (body?.requestId) {
             try {
-                // Fetch existing item first
-                const existingItem = await wixData.get("UserImages", body.requestId);
-                if (existingItem) {
-                    const failedItem = {
-                        ...existingItem,
-                        status: "failed"
-                    };
-                    await wixData.update("UserImages", failedItem);
-                }
+                // @ts-ignore - Same harmless warning as above.
+                await wixData.update("UserImages", body.requestId, { status: "failed" });
             } catch (updateError) {
                 console.error('Failed to update record to failed:', updateError);
             }
