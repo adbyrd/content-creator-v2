@@ -1,0 +1,49 @@
+{
+  "info": {
+    "name": "Wix receiveImage Test",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "POST receiveImage",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"requestId\": \"{{requestId}}\",\n    \"imageBase64\": \"{{imageBase64}}\",\n    \"mimeType\": \"{{mimeType}}\"\n}"
+        },
+        "url": {
+          "raw": "https://{{wixDomain}}/_functions/receiveImage",
+          "protocol": "https",
+          "host": ["{{wixDomain}}"],
+          "path": ["_functions", "receiveImage"]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "wixDomain",
+      "value": "www.yoursite.com"
+    },
+    {
+      "key": "requestId",
+      "value": ""
+    },
+    {
+      "key": "imageBase64",
+      "value": ""
+    },
+    {
+      "key": "mimeType",
+      "value": "image/png"
+    }
+  ]
+}

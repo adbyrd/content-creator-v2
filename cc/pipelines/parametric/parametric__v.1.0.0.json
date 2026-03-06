@@ -1,0 +1,359 @@
+{
+  "name": "n8n - Imagen 4",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        1328,
+        0
+      ],
+      "id": "04d8c9fd-b553-4643-95ae-dca425ccce17",
+      "name": "Respond to Webhook"
+    },
+    {
+      "parameters": {
+        "name": "={{ $('File Name').item.json.filename }}",
+        "driveId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "My Drive"
+        },
+        "folderId": {
+          "__rl": true,
+          "value": "109xSXsqdZV4eBt81v-AgMZ1S9Zmmw9hO",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        976,
+        0
+      ],
+      "id": "047e8519-689c-4732-ac54-612cfe892158",
+      "name": "Upload file",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "Ch9xDms2IGmjHQ8D",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "![Node 1 Header Image](https://header-img.png)\n### Node 1 Heading 3\n\nNode plain english description in 300 characters. ",
+        "height": 496,
+        "width": 304,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -736,
+        -320
+      ],
+      "typeVersion": 1,
+      "id": "11f2ec97-ec36-4659-80b2-243688a546d1",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "content": "![Pipeline Header Image](https://header-img.png)\n### Pipeline Heading 3\n\nPipeline plain english description in 300 characters. ",
+        "height": 496,
+        "width": 304,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1056,
+        -320
+      ],
+      "typeVersion": 1,
+      "id": "c5631e7d-464e-439d-8c30-f1f67af0f7af",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "![Node 2 Header Image](https://header-img.png)\n### Node 2 Heading 3\n\nNode plain english description in 300 characters. ",
+        "height": 496,
+        "width": 304,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -416,
+        -320
+      ],
+      "typeVersion": 1,
+      "id": "c3a0b8c0-2ed5-4ccc-865f-aa61c854382d",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "content": "![Node 3 Header Image](https://header-img.png)\n### Node 3 Heading 3\n\nNode plain english description in 300 characters. ",
+        "height": 496,
+        "width": 304,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -96,
+        -320
+      ],
+      "typeVersion": 1,
+      "id": "fa3f40fd-d349-4b72-97c1-9673a8fe502b",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "content": "![Node 4 Header Image](https://header-img.png)\n### Node 4 Heading 3\n\nNode plain english description in 300 characters. ",
+        "height": 496,
+        "width": 304,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        224,
+        -320
+      ],
+      "typeVersion": 1,
+      "id": "20113232-792d-44c9-b0eb-d4cd0c573816",
+      "name": "Sticky Note4"
+    },
+    {
+      "parameters": {
+        "content": "![Node 5 Header Image](https://header-img.png)\n### Node 5 Heading 3\n\nNode plain english description in 300 characters. ",
+        "height": 496,
+        "width": 304,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        544,
+        -320
+      ],
+      "typeVersion": 1,
+      "id": "75a2a4bb-3f07-4165-8fd7-0f88a2df2b98",
+      "name": "Sticky Note5"
+    },
+    {
+      "parameters": {
+        "content": "![Node 6 Header Image](https://header-img.png)\n### Node 6 Heading 3\n\nNode plain english description in 300 characters. ",
+        "height": 496,
+        "width": 304,
+        "color": "#FFFDF5"
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1232,
+        -320
+      ],
+      "typeVersion": 1,
+      "id": "93139d40-f9fd-4076-9154-c4b1e6295a1a",
+      "name": "Sticky Note6"
+    },
+    {
+      "parameters": {
+        "content": "![Node 7 Header Image](https://header-img.png)\n### Node 7 Heading 3\n\nNode plain english description in 300 characters. ",
+        "height": 496,
+        "width": 304,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        880,
+        -320
+      ],
+      "typeVersion": 1,
+      "id": "b95c78fe-624d-49e7-8485-4ace31dfcc45",
+      "name": "Sticky Note7"
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "{\n    \"authorization-url\": \"https://accounts.google.com/o/oauth2/auth\",\n    \"access-token-url\": \"https://oauth2.googleapis.com/token\",\n    \"client-id\": \"518818810714-gft4rtt8lonngn262ic0a3qqb8ara6pu.apps.googleusercontent.com\",\n    \"client-secret\": \"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\",\n    \"scope\": \"https://www.googleapis.com/auth/cloud-platform\",\n    \"grant-type\": \"Authorization Code\",\n    \"state\": \"\",\n    \"region\": \"us-south1\",\n    \"project-id\": \"content-creator-v1-488205\",\n    \"location\": \"us-south1\",\n    \"model-4\": \"imagen-4.0-generate-001\",\n    \"action\": \"predict\",\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -320,
+        0
+      ],
+      "id": "b63fdeb6-aaab-4973-9c18-f3b3771eb046",
+      "name": "Temp Variables",
+      "notesInFlow": true,
+      "notes": "Google Cloud Variables"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "cc/parametric",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -640,
+        0
+      ],
+      "id": "7f29d56e-428c-4449-ae80-ebc06612c87e",
+      "name": "Parametric Trigger",
+      "webhookId": "9bf5ad7c-0a1d-46a6-861d-05a10f568f4c",
+      "notesInFlow": true,
+      "notes": "Listens for Image Gen. Prompts"
+    },
+    {
+      "parameters": {
+        "jsCode": "/**\n * FILE NAME GENERATOR\n */\n\n\n// Get current date\nconst now = new Date();\nconst year = now.getFullYear();\nconst month = String(now.getMonth() + 1).padStart(2, '0');\nconst day = String(now.getDate()).padStart(2, '0');\nconst dateStr = `${year}-${month}-${day}`;\n\n// Generate 8 random characters (A-Z, a-z, 0-9)\nconst chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';\nlet randomStr = '';\nfor (let i = 0; i < 8; i++) {\n  const randomIndex = Math.floor(Math.random() * chars.length);\n  randomStr += chars[randomIndex];\n}\n\n// Combine into final string\nconst result = `${dateStr}_${randomStr}_content-creator`;\n\n// Return as an n8n item (outputs a single item with field \"filename\")\nreturn [{ filename: result }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "42c00db3-22c5-4ccf-b9ba-208553a95fe3",
+      "name": "File Name",
+      "notesInFlow": true,
+      "notes": "Generates File Name"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://{{ $('Temp Variables').item.json.region }}-aiplatform.googleapis.com/v1/projects/{{ $('Temp Variables').item.json['project-id'] }}/locations/{{ $('Temp Variables').item.json.location }}/publishers/google/models/{{ $('Temp Variables').item.json['model-4'] }}:{{ $('Temp Variables').item.json.action }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googleOAuth2Api",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "=json",
+        "bodyParameters": {
+          "parameters": [
+            {}
+          ]
+        },
+        "jsonBody": "={\n  \"instances\": [\n    {\n      \"prompt\": \"{{ $('Parametric Trigger').item.json.body.prompt }}\"\n    }\n  ],\n  \"parameters\": {\n    \"aspectRatio\": \"9:16\",\n    \"guidanceScale\": 15,\n    \"outputOptions\": {\n      \"compressionQuality\": 80,\n      \"mimeType\": \"image/jpeg\"\n    },\n    \"safetySettings\": {\n      \"personGeneration\": \"allow_adult\",\n      \"safetyFilterLevel\": \"block_only_high\"\n    },\n    \"sampleCount\": 2\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        320,
+        0
+      ],
+      "id": "60a48b59-b2d4-42bc-bec1-2c3e8bc4a83b",
+      "name": "Imagen-4",
+      "notesInFlow": true,
+      "credentials": {
+        "googleOAuth2Api": {
+          "id": "GG4l16ZGtrJkRBVQ",
+          "name": "CC : Google OAuth2"
+        }
+      },
+      "notes": "POST  |  Generate Image"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Function Node code for n8n\n\n// Input may be:\n// - an array of items (each item containing predictions)\n// - a single item object containing a predictions array\nconst inputItem = $input.item.json;\n\nlet predictionsList = null;\n\n// Determine the structure\nif (Array.isArray(inputItem)) {\n  // Input is an array of items – use the whole array\n  predictionsList = inputItem;\n} else if (inputItem && Array.isArray(inputItem.predictions)) {\n  // Input is a single object with a predictions array\n  predictionsList = inputItem.predictions;\n} else {\n  // If it's a single object but doesn't have predictions, maybe it's the actual prediction?\n  // In the given structure, the object has \"predictions\", so we'll stick to that.\n  throw new Error('Input must be an array or an object with a \"predictions\" array');\n}\n\nif (predictionsList.length === 0) {\n  throw new Error('No predictions found');\n}\n\nconst outputItems = [];\n\n// predictionsList is an array of prediction objects\npredictionsList.forEach((prediction, index) => {\n  const base64Data = prediction.bytesBase64Encoded;\n  if (!base64Data) {\n    // Skip if missing base64 data\n    return;\n  }\n\n  // Convert base64 to binary Buffer\n  const imageBuffer = Buffer.from(base64Data, 'base64');\n\n  // Create a filename – you can customize the naming logic\n  const filename = `imagen_image_${index}.jpg`;\n\n  // Build the item that n8n expects for binary data\n  outputItems.push({\n    json: {\n      // Include any metadata you want to keep (e.g., prompt)\n      prompt: prediction.prompt,\n      index: index,\n      mimeType: prediction.mimeType || 'image/jpeg',\n    },\n    binary: {\n      data: {\n        data: imageBuffer,\n        fileName: filename,\n        mimeType: prediction.mimeType || 'image/jpeg',\n      },\n    },\n  });\n});\n\nif (outputItems.length === 0) {\n  throw new Error('No valid base64 images found');\n}\n\nreturn outputItems;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        640,
+        0
+      ],
+      "id": "f1090603-388b-4ebc-b3b3-51463822b217",
+      "name": "Base64",
+      "notesInFlow": true,
+      "notes": "Convert Base64 Strings"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Temp Variables": {
+      "main": [
+        [
+          {
+            "node": "File Name",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parametric Trigger": {
+      "main": [
+        [
+          {
+            "node": "Temp Variables",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "File Name": {
+      "main": [
+        [
+          {
+            "node": "Imagen-4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Imagen-4": {
+      "main": [
+        [
+          {
+            "node": "Base64",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Base64": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Upload file",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "53ac1b74-d79b-431b-8260-c191063f665e",
+  "meta": {
+    "instanceId": "04a268043a0ad358b2bc803f508c597bb6fea2c7c6cd13a1b439d13fae1b6a3b"
+  },
+  "id": "QUyuTBHD3MvZD7Bj",
+  "tags": []
+}
