@@ -175,7 +175,7 @@
     {
       "parameters": {
         "mode": "raw",
-        "jsonOutput": "{\n    \"authorization-url\": \"https://accounts.google.com/o/oauth2/auth\",\n    \"access-token-url\": \"https://oauth2.googleapis.com/token\",\n    \"client-id\": \"518818810714-gft4rtt8lonngn262ic0a3qqb8ara6pu.apps.googleusercontent.com\",\n    \"client-secret\": \"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\",\n    \"scope\": \"https://www.googleapis.com/auth/cloud-platform\",\n    \"grant-type\": \"Authorization Code\",\n    \"state\": \"\",\n    \"region\": \"us-south1\",\n    \"project-id\": \"content-creator-v1-488205\",\n    \"location\": \"us-south1\",\n    \"model-4\": \"imagen-4.0-generate-001\",\n    \"action\": \"predict\",\n}",
+        "jsonOutput": "{}",
         "options": {}
       },
       "type": "n8n-nodes-base.set",
