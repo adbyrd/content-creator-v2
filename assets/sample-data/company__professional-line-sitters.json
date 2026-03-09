@@ -1,0 +1,18 @@
+[
+    {
+    "company-name": "Professional Line Sitters",
+    "company-logo": "https://example.com/logos/line-sitters.png",
+    "company-color-palette": {
+      "color-001": "#3F51B5",
+      "color-002": "#FF7043",
+      "color-003": "#FAFAFA",
+      "color-004": "#263238",
+      "color-005": "#90CAF9"
+    },
+    "product-service": "Service that hires people to wait in line for product launches, ticket sales, or restaurant openings.",
+    "target-audience": "Busy professionals, sneaker collectors, and tech enthusiasts who want limited items without waiting hours in line.",
+    "campaign-objective": "Generate bookings during high-demand launch events and product releases.",
+    "platform": "LinkedIn",
+    "tone": "Professional, clever, time-saving"
+  }
+]

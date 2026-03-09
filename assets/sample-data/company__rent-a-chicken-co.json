@@ -1,0 +1,18 @@
+[
+    {
+    "company-name": "Rent-A-Chicken Co.",
+    "company-logo": "https://example.com/logos/rent-a-chicken.png",
+    "company-color-palette": {
+      "color-001": "#F4C542",
+      "color-002": "#2E4A62",
+      "color-003": "#F7F7F7",
+      "color-004": "#8C4B2D",
+      "color-005": "#1E1E1E"
+    },
+    "product-service": "Seasonal backyard chicken rentals that provide families with egg-laying hens, a coop, and feed for several months.",
+    "target-audience": "Suburban families interested in farm-to-table food and sustainable living but not ready to permanently own chickens.",
+    "campaign-objective": "Promote spring and summer chicken rental packages and increase seasonal bookings.",
+    "platform": "Instagram Reels",
+    "tone": "Wholesome, playful, family-friendly"
+  }
+]

@@ -1,0 +1,18 @@
+[
+    {
+    "company-name": "The Onion Orphanage",
+    "company-logo": "https://example.com/logos/onion-orphanage.png",
+    "company-color-palette": {
+      "color-001": "#D4AF37",
+      "color-002": "#6B8E23",
+      "color-003": "#F5F5DC",
+      "color-004": "#5A4632",
+      "color-005": "#2F2F2F"
+    },
+    "product-service": "A specialty farm that 'adopts out' rare heirloom onions to chefs and food enthusiasts through subscription boxes.",
+    "target-audience": "Foodies, chefs, and culinary experimenters who enjoy rare or unusual ingredients.",
+    "campaign-objective": "Promote subscription adoption boxes featuring rare onion varieties.",
+    "platform": "LinkedIn",
+    "tone": "Dry humor, artisanal, culinary authority"
+  }
+]

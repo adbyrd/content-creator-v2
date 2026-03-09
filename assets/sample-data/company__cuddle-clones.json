@@ -1,0 +1,18 @@
+[
+    {
+    "company-name": "Cuddle Clones",
+    "company-logo": "https://example.com/logos/cuddle-clones.png",
+    "company-color-palette": {
+      "color-001": "#F8BBD0",
+      "color-002": "#6A1B9A",
+      "color-003": "#FFFFFF",
+      "color-004": "#E1BEE7",
+      "color-005": "#333333"
+    },
+    "product-service": "Custom plush toys that are handcrafted to look exactly like a customer's real pet.",
+    "target-audience": "Pet owners and memorial gift buyers who want a sentimental keepsake of their dog, cat, or other beloved animal.",
+    "campaign-objective": "Drive emotional engagement and conversions around personalized pet plush replicas.",
+    "platform": "TikTok",
+    "tone": "Heartwarming, sentimental, uplifting"
+  }
+]
