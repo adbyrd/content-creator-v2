@@ -1,0 +1,139 @@
+[
+  {
+    "scene_1": {
+      "duration": "1.368",
+      "sequence": 1,
+      "visual": "{{ $json.scene_1.visual }}",
+      "music": "{{ $json.scene_1.music }}",
+      "sfx": "{{ $json.scene_1.sfx }}",
+      "dialogue": "{{ $json.scene_1.dialogue }}",
+      "text-to-image":""
+    },
+    "scene_2": {
+      "duration": "0.734",
+      "sequence": 2,
+      "visual": "{{ $json.scene_2.visual }}",
+      "music": "{{ $json.scene_2.music }}",
+      "sfx": "{{ $json.scene_2.sfx }}",
+      "dialogue": "{{ $json.scene_2.dialogue }}",
+      "text-to-image":""
+    },
+    "scene_3": {
+      "duration": "0.634",
+      "sequence": 3,
+      "visual": "{{ $json.scene_3.visual }}",
+      "music": "{{ $json.scene_3.music }}",
+      "sfx": "{{ $json.scene_3.sfx }}",
+      "dialogue": "{{ $json.scene_3.dialogue }}",
+      "text-to-image":""
+    },
+    "scene_4": {
+      "duration": "1.433",
+      "sequence": 4,
+      "visual": "{{ $json.scene_4.visual }}",
+      "music": "{{ $json.scene_4.music }}",
+      "sfx": "{{ $json.scene_4.sfx }}",
+      "dialogue": "{{ $json.scene_4.dialogue }}",
+      "text-to-image":""
+    },
+    "scene_5": {
+      "duration": "1.168",
+      "sequence": 5,
+      "visual": "{{ $json.scene_5.visual }}",
+      "music": "{{ $json.scene_5.music }}",
+      "sfx": "{{ $json.scene_5.sfx }}",
+      "dialogue": "{{ $json.scene_5.dialogue }}",
+      "text-to-image":""
+    },
+    "scene_6": {
+      "duration": "0.60",
+      "sequence": 6,
+      "visual": "{{ $json.scene_6.visual }}",
+      "music": "{{ $json.scene_6.music }}",
+      "sfx": "{{ $json.scene_6.sfx }}",
+      "dialogue": "{{ $json.scene_6.dialogue }}",
+      "text-to-image":""
+    },
+    "scene_7": {
+      "duration": "1.768",
+      "sequence": 7,
+      "visual": "{{ $json.scene_7.visual }}",
+      "music": "{{ $json.scene_7.music }}",
+      "sfx": "{{ $json.scene_7.sfx }}",
+      "dialogue": "{{ $json.scene_7.dialogue }}",
+      "text-to-image":""
+    },
+    "scene_8": {
+      "duration": "2.068",
+      "sequence": 8,
+      "visual": "{{ $json.scene_8.visual }}",
+      "music": "{{ $json.scene_8.music }}",
+      "sfx": "{{ $json.scene_8.sfx }}",
+      "dialogue": "{{ $json.scene_8.dialogue }}",
+      "text-to-image":""
+    },
+    "scene_9": {
+      "duration": "3.567",
+      "sequence": 9,
+      "visual": "{{ $json.scene_9.visual }}",
+      "music": "{{ $json.scene_9.music }}",
+      "sfx": "{{ $json.scene_9.sfx }}",
+      "dialogue": "{{ $json.scene_9.dialogue }}",
+      "text-to-image":""
+    },
+    "scene_10": {
+      "duration": "2.035",
+      "sequence": 10,
+      "visual": "{{ $json.scene_10.visual }}",
+      "music": "{{ $json.scene_10.music }}",
+      "sfx": "{{ $json.scene_10.sfx }}",
+      "dialogue": "{{ $json.scene_10.dialogue }}",
+      "text-to-image":""
+    },
+    "scene_11": {
+      "duration": "2.602",
+      "sequence": 11,
+      "visual": "{{ $json.scene_11.visual }}",
+      "music": "{{ $json.scene_11.music }}",
+      "sfx": "{{ $json.scene_11.sfx }}",
+      "dialogue": "{{ $json.scene_11.dialogue }}",
+      "text-to-image":""
+    },
+    "scene_12": {
+      "duration": "1.701",
+      "sequence": 12,
+      "visual": "{{ $json.scene_12.visual }}",
+      "music": "{{ $json.scene_12.music }}",
+      "sfx": "{{ $json.scene_12.sfx }}",
+      "dialogue": "{{ $json.scene_12.dialogue }}",
+      "text-to-image":""
+    },
+    "scene_13": {
+      "duration": "4.604",
+      "sequence": 13,
+      "visual": "{{ $json.scene_13.visual }}",
+      "music": "{{ $json.scene_13.music }}",
+      "sfx": "{{ $json.scene_13.sfx }}",
+      "dialogue": "{{ $json.scene_13.dialogue }}",
+      "text-to-image":""
+    },
+    "scene_14": {
+      "duration": "1.568",
+      "sequence": 14,
+      "visual": "{{ $json.scene_14.visual }}",
+      "music": "{{ $json.scene_14.music }}",
+      "sfx": "{{ $json.scene_14.sfx }}",
+      "dialogue": "{{ $json.scene_14.dialogue }}",
+      "text-to-image":""
+    },
+    "scene_15": {
+      "duration": "4.150",
+      "sequence": 15,
+      "visual": "{{ $json.scene_15.visual }}",
+      "music": "{{ $json.scene_15.music }}",
+      "sfx": "{{ $json.scene_15.sfx }}",
+      "dialogue": "{{ $json.scene_15.dialogue }}",
+      "text-to-image":""
+    }
+  }
+]
