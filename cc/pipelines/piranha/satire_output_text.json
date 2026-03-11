@@ -1,0 +1,46 @@
+[
+  {
+    "scene_1": {
+      "dialogue": "Narrator: 'In moments of loss, Cuddle Clones brings timeless comfort.'",
+      "duration": "2.5",
+      "music": "Melancholic piano melody evoking deep emotions.",
+      "sequence": 1,
+      "sfx": "Soft weeping in the background, gentle petting sounds.",
+      "text-to-image": {
+        "Core Subject & Action": "Pet owner holds plush replica of golden retriever",
+        "Environment & Context": "Cozy living room setting with soft lighting",
+        "Style & Lighting": "Warm and emotional lighting design",
+        "Technical Specs & Camera": "Close-up shot with shallow depth of field"
+      },
+      "visual": "Soft lighting in a cozy living room, a tearful pet owner holds a lifelike plush replica of their late golden retriever, caressing its fur gently."
+    },
+    "scene_2": {
+      "dialogue": "Narrator: 'Cuddle Clones, where memories become forever companions.'",
+      "duration": "2",
+      "music": "Epic orchestra swells with a sense of unity and love.",
+      "sequence": 2,
+      "sfx": "Gentle breeze rustling through the field, soft animal laughter.",
+      "text-to-image": {
+        "Core Subject & Action": "Multiple pet plush replicas playing in a field",
+        "Environment & Context": "Vast field at sunset",
+        "Style & Lighting": "Golden hour lighting enhancing warmth and surrealism",
+        "Technical Specs & Camera": "Wide-angle shot capturing the beauty of nature"
+      },
+      "visual": "Transitioning to a vast, dreamy field at sunset, multiple pet plush replicas frolic joyfully together, each one mirroring a real pet uniquely."
+    },
+    "scene_3": {
+      "dialogue": "Narrator: 'Cuddle Clones, the unforgettable magic your pet deserves.'",
+      "duration": "3",
+      "music": "Upbeat symphonic score building excitement and wonder.",
+      "sequence": 3,
+      "sfx": "Audience gasps and whispers in astonishment, stage lights flickering on.",
+      "text-to-image": {
+        "Core Subject & Action": "Colossal plush cat replica unveiled on grand stage",
+        "Environment & Context": "Dramatic stage setting with spotlights",
+        "Style & Lighting": "Theatrical lighting for maximum impact",
+        "Technical Specs & Camera": "Dynamic camera angles for grand reveal"
+      },
+      "visual": "A grand stage with a colossal plush replica of a house cat unveiled dramatically under dazzling spotlights, pet owners gasping in awe."
+    }
+  }
+]
