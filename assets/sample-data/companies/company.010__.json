@@ -1,0 +1,18 @@
+[
+  {
+    "company-name": "Urban Beehive Rentals",
+    "company-logo": "https://example.com/logos/urban-beehive.png",
+    "company-color-palette": {
+      "color-001": "#FFD54F",
+      "color-002": "#424242",
+      "color-003": "#FFFDE7",
+      "color-004": "#FBC02D",
+      "color-005": "#212121"
+    },
+    "product-service": "Installation and maintenance of rooftop beehives for businesses and homes, producing local honey.",
+    "target-audience": "Eco-conscious businesses, restaurants, and urban sustainability advocates.",
+    "campaign-objective": "Promote rooftop hive installations and honey branding partnerships.",
+    "platform": "Instagram",
+    "tone": "Sustainable, artisanal, inspiring"
+  }
+]

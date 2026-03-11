@@ -1,0 +1,18 @@
+[
+  {
+    "company-name": "The Silent Disco Company",
+    "company-logo": "https://example.com/logos/silent-disco.png",
+    "company-color-palette": {
+      "color-001": "#6C63FF",
+      "color-002": "#FF6584",
+      "color-003": "#F5F5F5",
+      "color-004": "#2D2D2D",
+      "color-005": "#00E5FF"
+    },
+    "product-service": "Wireless headphone dance parties where participants listen to music privately while dancing in shared spaces.",
+    "target-audience": "Event planners, festival organizers, and college campuses seeking unique entertainment experiences.",
+    "campaign-objective": "Increase bookings for large-scale silent disco events.",
+    "platform": "TikTok",
+    "tone": "Energetic, playful, vibrant"
+  }
+]

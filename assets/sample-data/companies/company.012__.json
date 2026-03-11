@@ -1,0 +1,18 @@
+[
+  {
+    "company-name": "Luxury Picnic Architects",
+    "company-logo": "https://example.com/logos/luxury-picnic.png",
+    "company-color-palette": {
+      "color-001": "#D8C3A5",
+      "color-002": "#8E8D8A",
+      "color-003": "#F5F5F5",
+      "color-004": "#E98074",
+      "color-005": "#2C2C2C"
+    },
+    "product-service": "High-end outdoor picnic setups featuring curated décor, gourmet food, and Instagram-ready staging.",
+    "target-audience": "Couples celebrating anniversaries, influencers, and event planners seeking aesthetic outdoor experiences.",
+    "campaign-objective": "Promote premium romantic picnic packages and social media-friendly events.",
+    "platform": "Instagram",
+    "tone": "Elegant, aspirational, romantic"
+  }
+]

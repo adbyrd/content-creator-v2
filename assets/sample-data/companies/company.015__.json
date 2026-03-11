@@ -1,0 +1,18 @@
+[
+  {
+    "company-name": "Backyard Stargazing Rentals",
+    "company-logo": "https://example.com/logos/stargazing.png",
+    "company-color-palette": {
+      "color-001": "#1A237E",
+      "color-002": "#64B5F6",
+      "color-003": "#E3F2FD",
+      "color-004": "#0D47A1",
+      "color-005": "#212121"
+    },
+    "product-service": "Delivered telescope kits with guided astronomy experiences hosted virtually by professional astronomers.",
+    "target-audience": "Families, science enthusiasts, and parents looking for educational outdoor activities.",
+    "campaign-objective": "Promote family stargazing packages and seasonal meteor shower events.",
+    "platform": "YouTube",
+    "tone": "Educational, awe-inspiring, family-friendly"
+  }
+]

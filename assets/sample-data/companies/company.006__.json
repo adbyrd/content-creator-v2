@@ -1,0 +1,18 @@
+[
+  {
+    "company-name": "Cat Cafés International",
+    "company-logo": "https://example.com/logos/cat-cafe.png",
+    "company-color-palette": {
+      "color-001": "#F4A261",
+      "color-002": "#2A9D8F",
+      "color-003": "#FFF8E7",
+      "color-004": "#E76F51",
+      "color-005": "#264653"
+    },
+    "product-service": "Coffee shops where customers can relax and interact with adoptable rescue cats while enjoying drinks and pastries.",
+    "target-audience": "Urban millennials, remote workers, and animal lovers who enjoy cozy café culture and spending time with cats.",
+    "campaign-objective": "Increase weekday café traffic and promote cat adoption partnerships.",
+    "platform": "Instagram Reels",
+    "tone": "Cozy, wholesome, calming"
+  }
+]

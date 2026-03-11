@@ -1,0 +1,18 @@
+[
+  {
+    "company-name": "Sleep Pod Office Rentals",
+    "company-logo": "https://example.com/logos/sleep-pods.png",
+    "company-color-palette": {
+      "color-001": "#5C6BC0",
+      "color-002": "#ECEFF1",
+      "color-003": "#263238",
+      "color-004": "#90CAF9",
+      "color-005": "#37474F"
+    },
+    "product-service": "Short-term nap pod rentals in urban centers designed for professionals needing quick rest breaks during the workday.",
+    "target-audience": "Overworked urban professionals, tech employees, and frequent travelers needing mid-day rest.",
+    "campaign-objective": "Promote corporate memberships and daily drop-in bookings.",
+    "platform": "LinkedIn",
+    "tone": "Productivity-focused, modern, calming"
+  }
+]

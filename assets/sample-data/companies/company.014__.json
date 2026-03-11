@@ -1,0 +1,18 @@
+[
+  {
+    "company-name": "Professional Apology Service",
+    "company-logo": "https://example.com/logos/apology-service.png",
+    "company-color-palette": {
+      "color-001": "#6D6875",
+      "color-002": "#B5838D",
+      "color-003": "#FFE5D9",
+      "color-004": "#FFB4A2",
+      "color-005": "#3A3A3A"
+    },
+    "product-service": "Professional writers and performers who craft and deliver personalized apologies for difficult situations.",
+    "target-audience": "Executives, public figures, and individuals navigating sensitive personal or professional conflicts.",
+    "campaign-objective": "Promote premium apology writing and video apology delivery services.",
+    "platform": "LinkedIn",
+    "tone": "Serious with subtle humor, polished"
+  }
+]

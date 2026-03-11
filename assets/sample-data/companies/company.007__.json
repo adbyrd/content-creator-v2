@@ -1,0 +1,18 @@
+[
+  {
+    "company-name": "The Goat Rental Collective",
+    "company-logo": "https://example.com/logos/goat-rental.png",
+    "company-color-palette": {
+      "color-001": "#C2B280",
+      "color-002": "#4CAF50",
+      "color-003": "#F5F5F5",
+      "color-004": "#8D6E63",
+      "color-005": "#2E2E2E"
+    },
+    "product-service": "Eco-friendly lawn and land clearing services using herds of goats to naturally remove weeds and brush.",
+    "target-audience": "Property owners, municipalities, and environmentally conscious land managers seeking chemical-free landscaping solutions.",
+    "campaign-objective": "Promote seasonal land-clearing bookings for parks, vineyards, and large properties.",
+    "platform": "LinkedIn",
+    "tone": "Eco-conscious, innovative, professional"
+  }
+]
