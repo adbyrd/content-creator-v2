@@ -1,0 +1,44 @@
+[
+  {
+    "scene": 1,
+    "scene_title": "Meadow Makeover",
+    "duration": 3,
+    "visual": "Goats grazing, lush meadow, wide-angle lens, golden hour lighting",
+    "dialogue": ""
+  },
+  {
+    "scene": 2,
+    "scene_title": "The Enthusiastic Gardener",
+    "duration": 3,
+    "visual": "Excited property owner applauding, sunny day, handheld camera, natural lighting",
+    "dialogue": ""
+  },
+  {
+    "scene": 3,
+    "scene_title": "Curious Curators",
+    "duration": 3,
+    "visual": "Goats munching on shrubs, park setting, aerial shots, diffused light",
+    "dialogue": ""
+  },
+  {
+    "scene": 4,
+    "scene_title": "Rustic Retreat",
+    "duration": 3,
+    "visual": "Goats clearing vineyard rows, late afternoon, close-up shots, warm spotlighting",
+    "dialogue": ""
+  },
+  {
+    "scene": 5,
+    "scene_title": "Marketing Mayhem",
+    "duration": 3,
+    "visual": "Goats wearing business suits, boardroom backdrop, extreme close-ups, dramatic lighting",
+    "dialogue": "In a world of landscaping errors, meet The Goat Rental Collective. It may sound ridiculous, but our eco-friendly goats are the answer!"
+  },
+  {
+    "scene": 6,
+    "scene_title": "Eco-Rescue Heroes",
+    "duration": 3,
+    "visual": "Goats cheerfully clearing land, graphics of booking platform, dynamic camera movements, vibrant lighting",
+    "dialogue": "Book The Goat Rental Collective now for a greener tomorrow!"
+  }
+]
