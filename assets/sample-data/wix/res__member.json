@@ -1,0 +1,18 @@
+{
+  "member": {
+    "id": "member-id-123",
+    "profile": {
+      "custom": {
+        "companyName": "Acme Inc.",
+        "companyEmail": "contact@acme.com",
+        "zipCode": "90210",
+        "websiteUrl": "https://acme.com",
+        "primaryCategory": "Technology",
+        "primarySubCategory": "SaaS",
+        "companyDescription": "We build awesome software.",
+        "customerType": "B2B",
+        "preferredPlatform": "Web"
+      }
+    }
+  }
+}
