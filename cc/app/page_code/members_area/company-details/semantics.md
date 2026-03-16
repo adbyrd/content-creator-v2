@@ -10,31 +10,55 @@ company-details.1.0.0
 The “Company Details” (company-details.js) static display section.
 
 ```bash  
-Section #ccCompanyDetails
-│         └── Box #ccCompanyDetail_right
-│         └── Box #ccCompanyDetail_left
-│                   └── Stack #ccCompanyDetailStack
-│                               └── Text #ccTitleCompany
-│                               └── Text #ccDisplayCompanyName
-│                               └── Text #ccDisplayCompanyWebsiteURL
-│                               └── Text #ccDisplayCompanyDescription
-│                               └── Text #ccTitleCompanyEmail
-│                               └── Text #ccTitleCompanyEmailDescription
-│                               └── Text #ccDisplayCompanyEmail
-│                               └── Text #ccTitleCompanyZipCode
-│                               └── Text #ccTitleCompanyZipCodeDescription
-│                               └── Text #ccDisplayCompanyZipCode
-│                               └── Text #ccTitleCompanyBusinessCategory
-│                               └── Text #ccTitleCompanyBusinessCategoryDescription
-│                               └── Text #ccDisplayCompanyBusinessCategory
-│                               └── Text #ccTitleCompanyBusinessSubCategory
-│                               └── Text #ccTitleCompanyBusinessSubCategoryDescription
-│                               └── Text #ccDisplayCompanyBusinessSubCategory
-│                               └── Text #ccTitleCompanyCustomerType
-│                               └── Text #ccTitleCompanyCustomerTypeDescription
-│                               └── Text #ccDisplayCompanyCustomerType
-│                               └── Text #ccTitleSocialMediaPlatform
-│                               └── Text #ccTitleSocialMediaPlatformDescription
-│                               └── Text #ccDisplaySocialMediaPlatform
+Section #ccIdentityHubDisplay
+│         └── Text #ccPageTitle
+│         └── Text #ccPageSubHeading
+│         └── Text #ccPageDescription
+
+│         └── Text #ccTitleCompany
+│         └── Text #ccDisplayCompanyName
+│         └── Text #ccDisplayCompanyWebsiteURL
+│         └── Text #ccDisplayCompanyDescription
+
+│         └── Text #ccCompanyEmailTitle
+│         └── Text #ccCompanyEmailDescription
+│         └── Text #ccDisplayCompanyEmail
+
+│         └── Text #ccCompanyZipCodeTitle
+│         └── Text #ccCompanyZipCodeDescription
+│         └── Text #ccDisplayCompanyZipCode
+
+│         └── Text #ccCompanyBusinessCategoryTitle
+│         └── Text #ccCompanyBusinessCategoryDescription
+│         └── Text #ccDisplayCompanyBusinessCategory
+
+
+│         └── Text #ccCompanyBusinessSubCategoryTitle
+│         └── Text #ccCompanyBusinessSubCategoryDescription
+│         └── Text #ccDisplayCompanyBusinessSubCategory
+
+│         └── Text #ccCompanyCustomerTypeTitle
+│         └── Text #ccCompanyCustomerTypeDescription
+│         └── Text #ccDisplayCompanyCustomerType
+
+│         └── Text #ccSocialMediaPlatformTitle
+│         └── Text #ccSocialMediaPlatformDescription
+│         └── Text #ccDisplaySocialMediaPlatform
 ```
 
+The “Company Details” (company-details.js) form for updating static section.
+
+```bash  
+Section #ccIdentityHubForm
+│         └── TextInput #ccFormCompanyName
+│         └── TextInput #ccFormCompanyEmail
+│         └── TextInput #ccFormCompanyZipcode
+│         └── TextInput #ccFormCompanyWebsite
+│         └── TextBox #ccFormCompanyDescription
+│         └── Dropdown #ccFormBusinessCategory
+│         └── Dropdown #ccFormBusinessSubCategory
+│         └── Dropdown #ccFormBusinessCustomerType
+│         └── Dropdown #ccFormSocialMediaPlatform
+
+│         └── Button #ccFormUpdateCompanyDetails
+```
