@@ -1,7 +1,7 @@
 /**
  * MEMBER DATA SERVICE
  * Handles CRUD for 'ccMembers' collection.
- * @version 1.1.0
+ * @version 2.1.0
  */
 
 import { Permissions, webMethod } from 'wix-web-module';

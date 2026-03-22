@@ -9,7 +9,7 @@ import wixWindowFrontend from 'wix-window-frontend';
 import wixLocation from 'wix-location';
 
 // Backend Service Imports
-import { getMemberBusinessProfile } from 'backend/memberData.web';
+import { getMemberBusinessProfile } from 'backend/ccMembers.web';
 
 // User-facing constants & Assets per Standards
 const MSG_LOAD_ERROR = "An unexpected error occurred while loading your profile.";
@@ -57,15 +57,15 @@ function hydrateProfile(member, businessData) {
     safeSetImage('#ccCoverPhoto', member.profile?.coverPhoto?.url, DEFAULT_COVER);
 
     // B. Contact Info (Emails/Phones from Wix)
-    safeSetText('#ccDisplayCompanyEmail', contact.emails?.[0] || "No email on file");
-    safeSetText('#ccDisplayCompanyPhone', contact.phones?.[0] || "No phone on file");
+    safeSetText('#ccDisplayCompanyEmail', contact.emails?.[0] || "No Company Email On File.");
+    safeSetText('#ccDisplayCompanyPhone', contact.phones?.[0] || "No Company Phone On File.");
 
     // C. Custom Business Data (ccMembers Collection)
     if (businessData) {
         // Company Identifiers
-        safeSetText('#ccDisplayCompanyName', businessData.ccComanyName || "Company Name Not Set");
-        safeSetText('#ccDisplayCompanyURL', businessData.ccCompanyURL || "Website Not Set");
-        safeSetText('#ccCompanyDescription', businessData.ccComanyDescription || "No description provided.");
+        safeSetText('#ccDisplayCompanyName', businessData.ccComanyName || "Update Company Name");
+        safeSetText('#ccDisplayCompanyURL', businessData.ccCompanyURL || "No Company URL On File.");
+        safeSetText('#ccDisplayCompanyDescription', businessData.ccComanyDescription || "No Company Description On File.");
         
         // If Company URL exists, set the link property
         if (businessData.ccCompanyURL && $w('#ccDisplayCompanyURL')) {
