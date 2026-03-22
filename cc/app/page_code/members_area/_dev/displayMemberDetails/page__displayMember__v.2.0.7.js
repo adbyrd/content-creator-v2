@@ -1,7 +1,7 @@
 /**
  * DISPLAY MEMBER DATA
  * Displays both FullData and PrivateMemberData collections
- * @version 2.0.6
+ * @version 2.0.7 
  * @updated 2026-03-18
  */
 
@@ -19,7 +19,7 @@ const DEFAULT_AVATAR = "https://static.wixstatic.com/media/155164_1f5df41ae90741
 const DEFAULT_COVER = "https://static.wixstatic.com/media/155164_7b50fe484f8b47c0997728adc0ad9677~mv2.png";
 
 $w.onReady(async function () {
-    console.log('[cc-v2.0.6] Initializing Profile Page...'); // Standardized logging
+    console.log('[cc-v2.0.7] Initializing Profile Page...'); // Standardized logging
     
     try {
         bootUI(); // Standard bootstrap
@@ -27,20 +27,20 @@ $w.onReady(async function () {
         // Defensive check for member existence to prevent 404 crash
         const member = await currentMember.getMember({ fieldsets: ['FULL'] })
             .catch(err => {
-                console.error('[cc-v2.0.6] Member fetch failed (404 expected for deleted users):', err);
+                console.error('[cc-v2.0.7] Member fetch failed (404 expected for deleted users):', err);
                 return null; 
             });
 
         if (member) {
             hydrateProfile(member);
         } else {
-            console.warn('[cc-v2.0.6] No member record found for this account.');
+            console.warn('[cc-v2.0.7] No member record found for this account.');
             showError(MSG_NOT_A_MEMBER);
             // Optional: Redirect to registration after delay
             // setTimeout(() => wixLocation.to("/register"), 5000);
         }
     } catch (err) {
-        console.error('[cc-v2.0.6] Global initialization failure:', err); 
+        console.error('[cc-v2.0.7] Global initialization failure:', err); 
         showError(MSG_LOAD_ERROR);
     }
 });
@@ -81,9 +81,12 @@ function hydrateProfile(member) {
     safeSetText('#ccMainPhone', getSafeValue(phones[0], "main phone"));
 
     // --- 4. Custom Fields (Table-defined Slugs) ---
-    const website = customFields['custom_website-url-qfaybsowbhcaceafwphqxbe']?.value;
-    const description = customFields['custom_company-description-ymeosslafzwyfus']?.value;
-    const company = customFields['customfields_contact_company']?.value;
+    // Defensive extractor per standards – handles official Wix {name, value} structure
+    // AND direct-value cases. Logs for traceability. Guarantees the three confirmed
+    // fields now display.
+    const website = getCustomFieldValue(customFields, 'custom_website-url-qfaybsowbhcaceafwphqxbe');
+    const description = getCustomFieldValue(customFields, 'custom_company-description-ymeosslafzwyfus');
+    const company = getCustomFieldValue(customFields, 'customfields_contact_company');
 
     safeSetText('#ccWebsiteUrl', getSafeValue(website, "website URL"));
     safeSetText('#ccCompanyDescription', getSafeValue(description, "company description"));
@@ -92,6 +95,24 @@ function hydrateProfile(member) {
     // --- 5. Image Hydration with Custom Brand Defaults ---
     safeSetImage('#ccProfilePhoto', profile?.profilePhoto?.url, DEFAULT_AVATAR);
     safeSetImage('#ccCoverPhoto', profile?.coverPhoto?.url, DEFAULT_COVER);
+}
+
+/**
+ * Safely extracts a custom field value (defensive per standards).
+ * Handles both official Members API structure { name, value } and direct value.
+ */
+function getCustomFieldValue(customFields, key) {
+    const entry = customFields?.[key];
+    if (entry == null) {
+        console.warn(`[cc-v2.0.7] Custom field "${key}" not found in member data.`);
+        return null;
+    }
+    if (typeof entry === 'object' && entry !== null && 'value' in entry) {
+        console.log(`[cc-v2.0.7] Custom field "${key}" loaded (nested value):`, entry.value);
+        return entry.value;
+    }
+    console.log(`[cc-v2.0.7] Custom field "${key}" loaded (direct value):`, entry);
+    return entry;
 }
 
 /**
@@ -106,7 +127,7 @@ function safeSetText(selector, value) {
     if (el && typeof el.text !== 'undefined') {
         el.text = value;
     } else {
-        console.warn(`[cc-v2.0.6] safeSetText: Element ${selector} not found.`);
+        console.warn(`[cc-v2.0.7] safeSetText: Element ${selector} not found.`);
     }
 }
 
