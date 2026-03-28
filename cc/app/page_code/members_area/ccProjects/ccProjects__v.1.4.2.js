@@ -1,13 +1,14 @@
 /**
  * PROJECT MANAGEMENT PAGE
- * @version 1.4.0
+ * @version 1.4.1
  * @updated 2026-03-26
  */
 
 import wixLocation from 'wix-location';
+import { currentMember } from 'wix-members-frontend';
 import { getProjects } from 'backend/projects.web';
 
-const VERSION_TAG = '[ccProjects-v1.4.0]';
+const VERSION_TAG = '[ccProjects-v1.4.1]';
 const PAGE_SIZE = 10;
 const MSG_LOAD_ERROR = 'We encountered an issue loading your projects. Please try refreshing.';
 
@@ -18,7 +19,21 @@ $w.onReady(async function () {
     
     bootUI();
     wireHandlers();
-    await hydrateProjects();
+
+    try {
+        const member = await currentMember.getMember();
+        
+        if (member) {
+            console.log(`${VERSION_TAG} Member authenticated: ${member._id}`);
+            await hydrateProjects(member._id);
+        } else {
+            console.warn(`${VERSION_TAG} No active session. Redirecting to login.`);
+            wixLocation.to('/login'); 
+        }
+    } catch (err) {
+        console.error(`${VERSION_TAG} Auth Check Failed:`, err.message);
+        showError("Authentication error. Please log in again.");
+    }
 });
 
 function bootUI() {
@@ -45,11 +60,14 @@ function wireHandlers() {
     });
 }
 
-async function hydrateProjects() {
-    console.log(`${VERSION_TAG} Hydrating project data...`);
+async function hydrateProjects(memberId) {
+    console.log(`${VERSION_TAG} Hydrating project data for Owner: ${memberId}`);
     
     try {
-        const result = await getProjects({ limit: PAGE_SIZE });
+        const result = await getProjects({ 
+            limit: PAGE_SIZE,
+            ownerId: memberId 
+        });
 
         if (result && result.ok) {
             _projectsCache = result.data;
@@ -75,7 +93,8 @@ function renderProjectsTable(data) {
     const table = $w('#projectsTable');
     
     table.columns = [
-        { id: 'colName', dataPath: 'title', label: 'Project Name', type: 'string' }
+        { id: 'colName', dataPath: 'title', label: 'Project Name', type: 'string' },
+        { id: 'colCreated', dataPath: '_createdDate', label: 'Created', type: 'date' }
     ];
     
     table.rows = data;
@@ -116,7 +135,7 @@ function safeHide(selector) {
     }
 }
 
-// --- Debug Exports: Aid for support and testing  ---
+// --- Debug Exports ---
 
 export function debugState() {
     console.log(`${VERSION_TAG} Current Cache:`, _projectsCache);

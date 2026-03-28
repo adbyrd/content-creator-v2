@@ -1,16 +1,13 @@
 /**
- * DISPLAY MEMBER DATA & BUSINESS SETTINGS
+ * PROFILE
  * @version 2.2.3
  * @updated 2026-03-25
  */
 
 import { currentMember } from 'wix-members-frontend';
 import wixWindowFrontend from 'wix-window-frontend';
-
-// Backend Service Imports
 import { getMemberBusinessProfile } from 'backend/ccMembers.web';
 
-// Standardized System Messages
 const MSG_SYSTEM_ERROR = "Something went wrong while loading your profile. Please contact support or try again later.";
 const MSG_AUTH_ERROR = "Session expired. Please log in again to access your profile.";
 const MSG_UPDATE_SUCCESS = "Your Profile Has Been Updated";
@@ -21,11 +18,9 @@ let _profileData = null;
 $w.onReady(async function () {
     console.log('[cc-v2.2.3] Initializing Member Profile Page...');
     
-    // 0. Immediate UI Bootstrap to prevent layout shifting
     bootUI(); 
 
     try {
-        // 1. Authenticate Member
         const member = await currentMember.getMember({ fieldsets: ['FULL'] });
         if (!member) {
             console.warn('[cc-v2.2.3] No session found.');
@@ -33,10 +28,8 @@ $w.onReady(async function () {
             return; 
         }
 
-        // 2. Fetch and Display Data
         const isDataLoaded = await refreshProfileData(member);
         
-        // 3. Initialize Interactive Elements
         if (isDataLoaded) {
             wireActionHandlers();
         }
@@ -52,11 +45,6 @@ $w.onReady(async function () {
  * -----------------------------------------------------------------------
  */
 
-/**
- * Triggers the Persistent Error Section.
- * Reclaims page space using .expand()
- * Hierarchy: #ccErrors (Section) > #ccErrorMsg (Text)
- */
 async function showSystemError(msg) {
     const errorSection = $w('#ccErrors');
     const errorMsgEl = $w('#ccErrorMsg');
@@ -64,23 +52,12 @@ async function showSystemError(msg) {
     if (errorSection && errorMsgEl) {
         errorMsgEl.text = msg;
         
-        // Ensure section takes up space before showing
         await errorSection.expand(); 
         errorSection.show("fade", { duration: 400 });
         
-        // Hide/Collapse main content to focus on error state
-        if ($w('#ccProfileContent')) {
-            $w('#ccProfileContent').hide();
-            $w('#ccProfileContent').collapse();
-        }
     }
 }
 
-/**
- * Triggers the Transient Success Toaster.
- * Expands to show, then collapses to remove from HTML flow after fade.
- * Hierarchy: #ccSuccessToaster (Section) > #ccSuccessMsg (Text)
- */
 async function showSuccess(msg) {
     const toaster = $w('#ccSuccessToaster');
     const msgEl = $w('#ccSuccessMsg');
@@ -88,25 +65,19 @@ async function showSuccess(msg) {
     if (toaster && msgEl) {
         msgEl.text = msg;
         
-        // Expand to reclaim layout space
+
         await toaster.expand();
         await toaster.show("fade", { duration: 300 });
 
-        // Wait 3.5s then start slow disappear
+
         setTimeout(async () => {
-            // Fade out over 2 seconds
             await toaster.hide("fade", { duration: 2000 });
-            // Remove from layout flow entirely (display: none)
             toaster.collapse(); 
         }, 3500);
     }
 }
 
-/**
- * Prepares the UI by collapsing all conditional messaging sections.
- */
 function bootUI() {
-    // Force collapse to ensure no empty space is reserved on load
     if ($w('#ccSuccessToaster')) {
         $w('#ccSuccessToaster').hide();
         $w('#ccSuccessToaster').collapse();
@@ -115,11 +86,6 @@ function bootUI() {
     if ($w('#ccErrors')) {
         $w('#ccErrors').hide();
         $w('#ccErrors').collapse();
-    }
-    
-    if ($w('#ccProfileContent')) {
-        $w('#ccProfileContent').show();
-        $w('#ccProfileContent').expand();
     }
 }
 
@@ -146,9 +112,7 @@ function hydrateProfile(member, businessData) {
     safeSetText('#ccMemberName', `${contact.firstName} ${contact.lastName}`);
 
     if (businessData) {
-        // Ensure system error is gone if we are hydrating successfully
         if ($w('#ccErrors')) $w('#ccErrors').collapse();
-        if ($w('#ccProfileContent')) $w('#ccProfileContent').expand();
 
         safeSetImage('#ccCompanyLogo', businessData.ccCompanyLogo, DEFAULT_AVATAR);
         safeSetText('#ccDisplayCompanyDescription', businessData.ccComanyDescription || "No Company Description On File.");
@@ -172,9 +136,6 @@ function hydrateProfile(member, businessData) {
     }
 }
 
-/**
- * Response handler for lightbox updates
- */
 async function handlePopupResult(success) {
     if (success) {
         const member = await currentMember.getMember({ fieldsets: ['FULL'] });

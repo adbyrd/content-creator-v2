@@ -1,13 +1,14 @@
 /**
  * PROJECT MANAGEMENT PAGE
- * @version 1.4.0
+ * @version 1.4.1
  * @updated 2026-03-26
  */
 
 import wixLocation from 'wix-location';
+import { authentication } from 'wix-members-frontend';
 import { getProjects } from 'backend/projects.web';
 
-const VERSION_TAG = '[ccProjects-v1.4.0]';
+const VERSION_TAG = '[ccProjects-v1.4.1]';
 const PAGE_SIZE = 10;
 const MSG_LOAD_ERROR = 'We encountered an issue loading your projects. Please try refreshing.';
 
@@ -18,7 +19,13 @@ $w.onReady(async function () {
     
     bootUI();
     wireHandlers();
-    await hydrateProjects();
+
+    if (authentication.loggedIn()) {
+        await hydrateProjects();
+    } else {
+        console.warn(`${VERSION_TAG} Unauthorized access: Redirecting to login.`);
+        wixLocation.to('/login'); 
+    }
 });
 
 function bootUI() {
@@ -49,7 +56,13 @@ async function hydrateProjects() {
     console.log(`${VERSION_TAG} Hydrating project data...`);
     
     try {
-        const result = await getProjects({ limit: PAGE_SIZE });
+        const member = await authentication.getMember();
+        const memberId = member._id;
+
+        const result = await getProjects({ 
+            limit: PAGE_SIZE,
+            ownerId: memberId 
+        });
 
         if (result && result.ok) {
             _projectsCache = result.data;
@@ -88,6 +101,9 @@ function showEmptyState() {
     safeShow('#emptyStateContainer');
 }
 
+/**
+ * Standardized Error Display 
+ */
 function showError(message) {
     const errorEl = $w('#ccGeneralError');
     if (errorEl && typeof errorEl.show === 'function') {
@@ -116,7 +132,7 @@ function safeHide(selector) {
     }
 }
 
-// --- Debug Exports: Aid for support and testing  ---
+// --- Debug Exports: Aid for support and testing ---
 
 export function debugState() {
     console.log(`${VERSION_TAG} Current Cache:`, _projectsCache);
